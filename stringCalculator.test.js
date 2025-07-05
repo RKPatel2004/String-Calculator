@@ -22,4 +22,8 @@ test('handling new line', () =>{
 
 test('throws error on negative numbers', () => {
     expect(() => add("-1,-2,3,-4")).toThrow("Negative numbers not allowed: -1,-2,-4");
-  });
+});
+
+test('supports custom single-character delimiter', () => {
+    expect(add("//;\n1;2;3")).toBe(6);
+});

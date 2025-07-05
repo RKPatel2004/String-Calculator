@@ -5,6 +5,12 @@ function add(numbers)
     let delimiter = /,|\n/;
     let input  = numbers;
 
+    if (numbers.startsWith("//")) {
+        const delimiterLine = numbers.split("\n")[0];
+        delimiter = new RegExp(delimiterLine[2]);
+        input = numbers.substring(numbers.indexOf('\n') + 1);
+    }
+
     const nums = input.split(delimiter).map(Number);
 
     const negatives = nums.filter(n => n < 0);
