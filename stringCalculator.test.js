@@ -15,3 +15,7 @@ test('adding two numbers', () =>{
 test('adding three numbers', () =>{
     expect(add("16, 4, 31")).toBe(51);
 });
+
+test('handling new line', () =>{
+    expect(add("5\n, 4, 2\n, 3")).toBe(14);
+});

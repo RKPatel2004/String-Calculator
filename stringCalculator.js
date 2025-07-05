@@ -2,9 +2,12 @@ function add(numbers)
 {
     if(numbers === "") return 0;
 
-    const nums = numbers.split(",");
+    let delimiter = /,|\n/;
+    let input  = numbers;
 
-    return nums.reduce((acc, num) => acc + parseInt(num), 0);
+    const nums = input.split(delimiter).map(Number);
+
+    return nums.reduce((acc, cur) => acc + cur, 0);
 }
 
 module.exports = add;
