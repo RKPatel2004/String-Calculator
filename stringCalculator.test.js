@@ -19,3 +19,7 @@ test('adding three numbers', () =>{
 test('handling new line', () =>{
     expect(add("5\n, 4, 2\n, 3")).toBe(14);
 });
+
+test('throws error on negative numbers', () => {
+    expect(() => add("-1,-2,3,-4")).toThrow("Negative numbers not allowed: -1,-2,-4");
+  });

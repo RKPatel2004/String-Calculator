@@ -7,6 +7,12 @@ function add(numbers)
 
     const nums = input.split(delimiter).map(Number);
 
+    const negatives = nums.filter(n => n < 0);
+    if(negatives.length > 0)
+    {
+        throw new Error(`Negative numbers not allowed: ${negatives.join(",")}`);
+    }
+
     return nums.reduce((acc, cur) => acc + cur, 0);
 }
 
